@@ -5,3 +5,5 @@
 .vs/DatingApp.API/v16/Server/sqlite3/storage.ide
 .vs/DatingApp.API/v16/Server/sqlite3/storage.ide-shm
 .vs/DatingApp.API/v16/Server/sqlite3/storage.ide-wal
+*.db-shm
+*.db-wal
