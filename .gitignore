@@ -7,3 +7,4 @@
 .vs/DatingApp.API/v16/Server/sqlite3/storage.ide-wal
 *.db-shm
 *.db-wal
+.vs/DatingApp.API/DesignTimeBuild/.dtbcache.v2
