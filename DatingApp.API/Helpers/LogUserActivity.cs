@@ -1,0 +1,25 @@
+﻿using DatingApp.API.Data;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
+
+namespace DatingApp.API.Helpers
+{
+    public class LogUserActivity : IAsyncActionFilter
+    {
+        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        {
+            var recultContext = await next();
+
+            var repo = recultContext.HttpContext.RequestServices.GetService<IDatingRepository>();
+
+            int userId = Int32.Parse(recultContext.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var user = await repo.GetUser(userId);
+            user.LastActive = DateTime.Now;
+
+            await repo.SaveAll();
+        }
+    }
+}
