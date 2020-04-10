@@ -30,6 +30,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages-resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 // workaround for ngx-gallery
 export class CustomHammerConfig extends HammerGestureConfig  {
@@ -49,6 +50,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
+      MemberMessagesComponent,
       PhotoEditorComponent,
       ListsComponent,
       MessagesComponent,
